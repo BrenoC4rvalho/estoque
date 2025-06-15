@@ -11,6 +11,10 @@ namespace api.Models
         [StringLength(150)]
         public string Street { get; set; }
 
+        [Required(ErrorMessage = "Number is required.")]
+        [Range(0, int.MaxValue, ErrorMessage = "Number must be zero or a positive number.")]
+        public int Number { get; set; }
+
         [Required(ErrorMessage = "City is required.")]
         [StringLength(100)]
         public string City { get; set; }
